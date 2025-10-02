@@ -2,3 +2,4 @@ fastapi
 uvicorn
 segno
 pillow
+gunicorn
