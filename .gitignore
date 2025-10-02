@@ -1,0 +1,43 @@
+# ============================================
+# PYTHON (FastAPI - Backend)
+# ============================================
+# Evitar archivos compilados y cachés
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+
+# Ignorar entornos virtuales
+.venv/
+venv/
+env/
+ENV/
+ENV.bak/
+
+# Ignorar metadatos de paquetes y artefactos de build
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-wheel-metadata/
+*.manifest
+*.spec
+
+# ============================================
+# CONFIGURACIÓN DE EDITORES
+# ============================================
+
+# Ignorar configuración local de VSCode en todo el proyecto
+.vscode/
+**/.vscode/
+backend/.vscode/
+
+# ============================================
+# ARCHIVOS TEMPORALES DEL SISTEMA
+# ============================================
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Listado de QRs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/frontend/css/estilo_qr.css">
+</head>
+<body>
+  <h1>Documentos disponibles</h1>
+  <p>Escanea o descarga el código QR para acceder al documento:</p>
+  <div id="qr-list"></div>
+
+  <script>
+    const container = document.getElementById("qr-list");
+    fetch("/qr/list")
+      .then(response => response.json())
+      .then(data => {
+        data.documentos.forEach(nombre => {
+          const qrCard = document.createElement("div");
+          qrCard.className = "qr-card";
+          qrCard.innerHTML = `
+            <div class="qr-content">
+              <img src="/qr/${nombre}" alt="QR de ${nombre}">
+              <div class="qr-info">
+                <h3>${nombre}</h3>
+                <a href="/qr/${nombre}/download">Descargar QR</a>
+              </div>
+            </div>
+          `;
+          container.appendChild(qrCard);
+        });
+      })
+      .catch(error => {
+        container.innerHTML = "<p>Error al cargar los documentos.</p>";
+        console.error("Error al obtener la lista de QRs:", error);
+      });
+  </script>
+</body>
+</html>
+

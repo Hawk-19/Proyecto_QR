@@ -1,0 +1,109 @@
+/* --- Estilo general del cuerpo --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f3f2f2;
+    margin: 0;
+    padding: 40px;
+}
+
+/* --- Título principal --- */
+h1 {
+    color: #333;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* --- Subtítulo --- */
+p {
+    color: #666;
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.qr-content {
+    display: flex;
+    flex-direction: column; /* o row si quieres horizontal */
+    align-items: center;     /* centra horizontalmente */
+    justify-content: center; /* centra verticalmente */
+}
+
+
+/* --- Contenedor de tarjetas QR --- */
+#qr-list {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    flex-wrap: nowrap;           /* ← evita que se acomoden en vertical */
+    overflow-x: auto;            /* ← permite scroll horizontal */
+    padding-bottom: 20px;
+    justify-content: center;
+
+}
+
+/* --- Tarjeta individual de QR --- */
+.qr-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 250px;
+    min-width: 250px;            /* ← asegura ancho mínimo */
+    flex-shrink: 0;              /* ← evita que se achiquen en scroll */
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Animación al pasar el mouse --- */
+.qr-card:hover {
+    transform: translateY(-5px);
+}
+
+/* --- Imagen del QR --- */
+.qr-card img {
+    border-radius: 8px;
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* --- Título del documento --- */
+.qr-card h3 {
+    margin: 0 0 10px;
+    color: #2c3e50;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+/* --- Botones de acción --- */
+.qr-card a {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    background: #8a8a8a;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+/* --- Hover en botones --- */
+.qr-card a:hover {
+    background: #292929;
+}
+
+/* --- Scrollbar personalizado (opcional) --- */
+#qr-list::-webkit-scrollbar {
+    height: 8px;
+}
+
+#qr-list::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
