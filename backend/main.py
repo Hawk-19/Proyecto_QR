@@ -54,7 +54,7 @@ def startup_event():
             doc_path = os.path.join(folder_path, "documento.pdf")
             if os.path.isdir(folder_path) and os.path.exists(doc_path):
                 qr_path = os.path.join(STATIC_QR_DIR, f"{folder}.png")
-                doc_url = f"http://192.168.122.38:8000/documento/{folder}"
+                doc_url = f"http://proyecto-qr-1-vq6l.onrender.com/documento/{folder}"
                 # Logo específico por carpeta
                 logo_path = os.path.join(LOGOS_DIR, f"{folder}.png")
                 if not os.path.exists(logo_path):
