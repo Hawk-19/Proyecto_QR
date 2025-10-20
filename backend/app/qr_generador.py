@@ -39,6 +39,7 @@ def generar_qr(url: str, output_path: str, logo_path: str = None):
                 )
     # Agregar logo centrado (solo si existe)
     if logo_path and os.path.exists(logo_path):
+        print("Insertando logo:", logo_path)
         logo = Image.open(logo_path).convert("RGBA")
         logo_size = img_size // 3
         logo = logo.resize((logo_size, logo_size), Image.Resampling.LANCZOS)
