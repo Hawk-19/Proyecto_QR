@@ -7,19 +7,19 @@ from backend.app.qr_generador import generar_qr
 
 app = FastAPI()
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname((os.path.abspath(__file__)))
 STATIC_QR_DIR = os.path.join(BASE_DIR, "static", "qr_code")
 LOGOS_DIR = os.path.join(BASE_DIR, "static", "logos")
 
 # --- Montar carpetas estáticas ---
 app.mount(
     "/static",
-    StaticFiles(directory=os.path.join(BASE_DIR, "backend", "static")),
+    StaticFiles(directory=os.path.join(BASE_DIR, "static")),
     name="static"
 )
 app.mount(
     "/frontend",
-    StaticFiles(directory=os.path.join(BASE_DIR, "frontend")),
+    StaticFiles(directory=os.path.join(BASE_DIR, "","frontend")),
     name="frontend"
 )
 
