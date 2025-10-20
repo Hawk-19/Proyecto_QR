@@ -41,7 +41,7 @@ def generar_qr(url: str, output_path: str, logo_path: str = None):
     if logo_path and os.path.exists(logo_path):
         print("Insertando logo:", logo_path)
         logo = Image.open(logo_path).convert("RGBA")
-        logo_size = img_size // 3
+        logo_size = img_size // 4
         logo = logo.resize((logo_size, logo_size), Image.Resampling.LANCZOS)
         pos = ((img_size - logo_size) // 2, (img_size - logo_size) // 2)
         # Crear imagen temporal para hacer el composite
