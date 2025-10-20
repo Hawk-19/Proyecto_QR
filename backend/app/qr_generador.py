@@ -52,7 +52,7 @@ def generar_qr(url: str, output_path: str, logo_path: str = None):
         logging.info(f"Logo encontrado: {logo_path}")
         try:
             logo = Image.open(logo_path).convert("RGBA")
-            logo_size = img_size // 4
+            logo_size = img_size // 3
             logo = logo.resize((logo_size, logo_size), Image.Resampling.LANCZOS)
             pos = ((img_size - logo_size) // 2, (img_size - logo_size) // 2)
 
