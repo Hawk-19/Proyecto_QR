@@ -8,8 +8,8 @@ from backend.app.qr_generador import generar_qr
 app = FastAPI()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_QR_DIR = os.path.join(BASE_DIR, "backend", "static", "qr_code")
-LOGOS_DIR = os.path.join(BASE_DIR, "backend", "static", "logos")
+STATIC_QR_DIR = os.path.join(BASE_DIR, "static", "qr_code")
+LOGOS_DIR = os.path.join(BASE_DIR, "static", "logos")
 
 # --- Montar carpetas estáticas ---
 app.mount(
