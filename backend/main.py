@@ -59,7 +59,7 @@ def startup_event():
                 qr_path = os.path.join(STATIC_QR_DIR, f"{folder}.png")
                 doc_url = f"http://proyecto-qr-1-vq6l.onrender.com/documento/{folder}"
                 # Logo específico por carpeta
-                logo_path = os.path.join(LOGOS_DIR, f"{folder}.png")
+                logo_path = os.path.join(LOGOS_DIR, f"{folder.lower()}.png")
                 if not os.path.exists(logo_path):
                     logo_path = None  # Si no existe, se genera sin logo
                 try:
