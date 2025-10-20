@@ -43,6 +43,9 @@ async def custom_http_exception_handler(request: Request, exc: StarletteHTTPExce
 # --- Aqui se genera los QRs por carpeta ---
 @app.on_event("startup")
 def startup_event():
+    print("BASE_DIR:", BASE_DIR)
+    print("LOGOS_DIR:", LOGOS_DIR)
+    print("LOGOS existentes:", os.listdir(LOGOS_DIR) if os.path.exists(LOGOS_DIR) else "NO EXISTE")
     os.makedirs(STATIC_QR_DIR, exist_ok=True)
     docs_dir = os.path.join(BASE_DIR, "docs")
     try:
